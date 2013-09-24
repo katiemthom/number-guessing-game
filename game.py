@@ -14,7 +14,7 @@ i = 1
 def check(guess):
     global i
     global not_won
-    number = int(guess)
+    number = float(guess)
     
     print "The number I'm checking is %s" % number
 
@@ -39,11 +39,11 @@ def check_char(char):
     else: 
         return False
 
-
 def check_input(input):
     for char in input:
         if check_char(char):
-            return False
+            if ord(char) != 46:
+                return False
     return True
 
 while not_won:
